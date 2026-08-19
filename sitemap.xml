@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://canddadvancedautorepair.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://canddadvancedautorepair.com/services.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canddadvancedautorepair.com/vehicles.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canddadvancedautorepair.com/specials.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canddadvancedautorepair.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://canddadvancedautorepair.com/</loc></url>
+<url><loc>https://canddadvancedautorepair.com/services.html</loc></url>
+<url><loc>https://canddadvancedautorepair.com/appointments.html</loc></url>
+<url><loc>https://canddadvancedautorepair.com/makes.html</loc></url>
+<url><loc>https://canddadvancedautorepair.com/financing.html</loc></url>
+<url><loc>https://canddadvancedautorepair.com/vehicles.html</loc></url>
+<url><loc>https://canddadvancedautorepair.com/specials.html</loc></url>
+<url><loc>https://canddadvancedautorepair.com/contact.html</loc></url>
+<url><loc>https://canddadvancedautorepair.com/pay.html</loc></url>
 </urlset>
