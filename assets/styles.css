@@ -455,3 +455,14 @@ img{height:auto}
 .vehicle-main-photo{display:block!important;width:100%!important;height:100%!important;min-height:430px;object-fit:cover!important;opacity:1!important;visibility:visible!important}
 @media(max-width:900px){.partner-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.partner-logo-card:last-child{grid-column:1/-1}.vehicle-main-photo{min-height:320px}}
 @media(max-width:540px){.partner-logo-grid{grid-template-columns:1fr 1fr;gap:10px}.partner-logo-card{min-height:90px;padding:12px}.partner-logo-card img{max-height:58px!important}.partner-logo-card:last-child{grid-column:1/-1}.vehicle-main-photo{min-height:250px}}
+
+/* v22 exact client-supplied shop partner logos */
+.partner-logo-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:28px;align-items:stretch}
+.partner-logo-card{min-height:122px;padding:18px 16px;background:linear-gradient(180deg,#171717 0%,#0b0b0b 100%);border:1px solid #303030;border-bottom:3px solid #ed1c24;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.partner-logo-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.06),transparent 58%);pointer-events:none}
+.partner-logo-card img{display:block!important;width:auto!important;height:auto!important;max-width:92%!important;max-height:78px!important;object-fit:contain!important;filter:drop-shadow(0 5px 10px rgba(0,0,0,.35))!important;opacity:1!important;position:relative;z-index:1}
+.partner-logo-card:nth-child(3) img{max-height:82px!important}
+.partner-logo-card:nth-child(4) img{max-height:72px!important}
+.partner-logo-card:nth-child(5) img{max-height:80px!important}
+@media(max-width:900px){.partner-logo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.partner-logo-card{min-height:108px}.partner-logo-card:nth-child(4),.partner-logo-card:nth-child(5){grid-column:auto}}
+@media(max-width:600px){.partner-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.partner-logo-card{min-height:96px;padding:14px 12px}.partner-logo-card img{max-height:62px!important}.partner-logo-card:nth-child(3) img{max-height:66px!important}.partner-logo-card:nth-child(4) img{max-height:58px!important}.partner-logo-card:nth-child(5){grid-column:1/-1}.partner-logo-card:nth-child(5) img{max-height:68px!important;max-width:180px!important}}
