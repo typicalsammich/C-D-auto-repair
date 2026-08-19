@@ -9,3 +9,35 @@ document.querySelectorAll('.coupon[data-copy-offer]').forEach(card=>{card.addEve
 // v10 appointment and Stripe UI
 (function(){const params=new URLSearchParams(location.search);const form=document.getElementById('appointment-form');if(form){const typeBtns=[...document.querySelectorAll('.appt-type')],hidden=document.getElementById('appt-service'),tire=document.getElementById('tire-fields'),sel=document.getElementById('service-select');function setType(t){hidden.value=t;typeBtns.forEach(b=>b.classList.toggle('active',b.dataset.service===t));tire.classList.toggle('show',t==='tire');if(t==='tire'&&sel)sel.value='Tire replacement';}typeBtns.forEach(b=>b.addEventListener('click',()=>setType(b.dataset.service)));if(params.get('service')==='tire')setType('tire');if(params.get('service')==='body'&&sel)sel.value='Paint & body';form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const fd=new FormData(form),lines=[];for(const [k,v] of fd.entries()){if(v)lines.push(k.replaceAll('_',' ')+': '+v)}const box=document.getElementById('appointment-summary');box.hidden=false;box.innerHTML='<h3>Appointment request prepared</h3><p>Review the details below, then use the shop’s current live appointment form or call to confirm.</p><pre></pre><div class="actions"><a class="btn red" target="_blank" rel="noopener" href="https://canddadvancedautorepair.com/appointments/">Continue to Live Appointment Form</a><a class="btn dark" href="tel:+17609753640">Call Shop</a></div>';box.querySelector('pre').textContent=lines.join('\n');box.scrollIntoView({behavior:'smooth',block:'center'});});}
 const pay=document.getElementById('stripe-pay');if(pay){pay.addEventListener('click',()=>{const modal=document.createElement('div');modal.className='stripe-modal';modal.innerHTML='<div class="stripe-modal-card"><div class="eyebrow">Stripe setup</div><h3>Payment link not connected yet.</h3><p>The client needs to provide the Stripe Payment Link from their Stripe account. Once added, this button can open secure Stripe checkout immediately.</p><div class="actions"><a class="btn red" href="tel:+17609753640">Call the Shop</a><button class="btn dark" type="button" data-close>Close</button></div></div>';document.body.appendChild(modal);modal.querySelector('[data-close]').onclick=()=>modal.remove();modal.addEventListener('click',e=>{if(e.target===modal)modal.remove()});});}})();
+
+
+// v20 robust vehicle photo selector. Preloads the next image before revealing it.
+(function(){
+  const photo=document.getElementById('vehicle-main-photo');
+  const buttons=[...document.querySelectorAll('.make-btn[data-poster]')];
+  if(!photo||!buttons.length) return;
+  const make=document.getElementById('vehicle-stage-make');
+  const model=document.getElementById('vehicle-stage-model');
+  const desc=document.getElementById('vehicle-stage-description');
+  const type=document.getElementById('vehicle-body-type');
+  buttons.forEach(btn=>{
+    const pre=new Image(); pre.src=btn.dataset.poster;
+    btn.addEventListener('click',function(){
+      const src=this.dataset.poster;
+      buttons.forEach(b=>b.classList.toggle('active',b===this));
+      photo.classList.add('is-switching');
+      const img=new Image();
+      img.onload=()=>{
+        photo.src=src;
+        photo.alt=(this.dataset.label||this.dataset.make||'Vehicle')+' representative vehicle photo';
+        if(make) make.textContent=this.dataset.make||'';
+        if(model) model.textContent=this.dataset.label||'';
+        if(desc) desc.textContent=this.dataset.desc||'';
+        if(type) type.textContent=this.dataset.type||'';
+        requestAnimationFrame(()=>requestAnimationFrame(()=>photo.classList.remove('is-switching')));
+      };
+      img.onerror=()=>{ photo.classList.remove('is-switching'); };
+      img.src=src;
+    });
+  });
+})();

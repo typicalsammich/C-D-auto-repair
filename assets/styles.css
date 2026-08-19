@@ -425,3 +425,33 @@ img{height:auto}
   .hero h1{font-size:39px}
 }
 @media(hover:none),(pointer:coarse){body,a,button,input,textarea,select{cursor:auto!important}.btn:hover,.service-card:hover,.quick-card:hover{transform:none!important}}
+
+
+/* v20 partner clarity */
+.partner-logo-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:24px;align-items:stretch}
+.partner-logo-card{min-height:106px;border:1px solid #2a2a2a;background:linear-gradient(180deg,#171717,#0d0d0d);display:flex;align-items:center;justify-content:center;padding:18px 12px;position:relative;overflow:hidden}
+.partner-logo-card:after{content:"";position:absolute;inset:auto 10% 0;height:2px;background:#ed1c24;opacity:.55}
+.partner-logo-card img{display:block;width:100%;height:64px;object-fit:contain;filter:drop-shadow(0 2px 0 rgba(255,255,255,.08));transform:translateZ(0)}
+.partner-logo-card:nth-child(4) img{height:58px}.partner-logo-card:nth-child(5) img{height:70px}
+@media(max-width:900px){.partner-logo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.partner-logo-card{min-height:98px}}
+@media(max-width:560px){.partner-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.partner-logo-card{min-height:90px;padding:14px 10px}.partner-logo-card img{height:54px}.partner-logo-card:nth-child(4) img{height:50px}.partner-logo-card:nth-child(5){grid-column:1/-1}.partner-logo-card:nth-child(5) img{height:62px;max-width:190px}}
+
+/* v20 real-photo selector reliability and framing */
+.vehicle-photo-wrap{background:#080808;overflow:hidden;position:relative}
+.vehicle-main-photo{width:100%;height:100%;min-height:470px;object-fit:cover;object-position:center;display:block;opacity:1;transition:opacity .22s ease,transform .55s ease;transform:scale(1.001)}
+.vehicle-photo-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03) 35%,rgba(0,0,0,.58) 100%);pointer-events:none}
+.vehicle-photo-wrap .photo-badge,.vehicle-photo-wrap .photo-caption{z-index:3}
+.vehicle-main-photo.is-switching{opacity:.18;transform:scale(1.025)}
+@media(max-width:900px){.vehicle-main-photo{min-height:390px}}
+@media(max-width:600px){.vehicle-main-photo{min-height:280px}.photo-badge{font-size:10px}}
+
+/* v21 reliable media + clearer partner presentation */
+.partner-logo-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch;margin-top:26px}
+.partner-logo-card{min-height:118px;display:flex;align-items:center;justify-content:center;padding:18px 14px;background:linear-gradient(180deg,#181818,#0d0d0d);border:1px solid #333;border-bottom:3px solid #ed1c24;overflow:hidden}
+.partner-logo-card img{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:76px!important;object-fit:contain!important;filter:none!important;opacity:1!important}
+.partner-logo-card:nth-child(4) img{max-height:68px!important}
+.partner-logo-card:nth-child(5) img{max-height:82px!important}
+.vehicle-photo-stage{background:#090909!important}
+.vehicle-main-photo{display:block!important;width:100%!important;height:100%!important;min-height:430px;object-fit:cover!important;opacity:1!important;visibility:visible!important}
+@media(max-width:900px){.partner-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.partner-logo-card:last-child{grid-column:1/-1}.vehicle-main-photo{min-height:320px}}
+@media(max-width:540px){.partner-logo-grid{grid-template-columns:1fr 1fr;gap:10px}.partner-logo-card{min-height:90px;padding:12px}.partner-logo-card img{max-height:58px!important}.partner-logo-card:last-child{grid-column:1/-1}.vehicle-main-photo{min-height:250px}}
