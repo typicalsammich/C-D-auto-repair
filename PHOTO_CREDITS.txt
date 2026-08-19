@@ -2,3 +2,19 @@ Service photography added in v11:
 - Keys & Lockouts: My Car Key Hero / Pexels, photo 17124739
 - Paint & Body: Mohammad Hammad / Pexels, photo 30250199
 Both sourced from Pexels and marked free to use on their respective photo pages.
+
+3D VEHICLE MODELS (v12):
+- Khronos Group ToyCar GLB, CC0 1.0, used as a representative car body style. Source: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ToyCar
+- Kenney Starter Kit Racing vehicle truck GLBs, included assets CC0 licensed, used as representative pickup/body styles. Source: https://github.com/KenneyNL/Starter-Kit-Racing
+- 3D models are representative only and are not presented as exact OEM models.
+
+
+v18 vehicle selector photography sources:
+Toyota Camry: Tri County Toyota / dealer image surfaced via web search.
+Chevrolet Silverado: Car and Driver / Hearst.
+Ford Explorer: dealer.com / Autodata.
+BMW 3 Series: The Citizen.
+Mercedes-Benz C-Class: Car Keys.
+Subaru Outback: WhichCar.
+RAM 1500: Lakeland Chrysler Dodge Jeep Ram.
+Note: confirm final production usage rights with each source or replace with client-supplied/licensed photography before commercial launch.
